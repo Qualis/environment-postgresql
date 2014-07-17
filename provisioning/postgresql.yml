@@ -1,0 +1,19 @@
+    - name: Install postgresql
+      apt: pkg=postgresql
+      sudo: yes
+      tags:
+      - postgresql
+      - run
+
+    - name: Install phppgadmin
+      apt: pkg=phppgadmin
+      sudo: yes
+      tags:
+      - postgresql
+      - manage
+      - apache
+      notify:
+      - Add phppgadmin configuration
+      - Remove phppgadmin configuration
+      - Create phppgadmin symlink
+      - Restart apache

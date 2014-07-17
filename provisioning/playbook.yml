@@ -1,0 +1,12 @@
+---
+- hosts: all
+
+  tasks:
+
+    - include: ../environment-apache/provisioning/apache.yml
+    - include: postgresql.yml
+
+  handlers:
+
+    - include: postgresql-handler.yml
+    - include: ../environment-apache/provisioning/apache-handler.yml
