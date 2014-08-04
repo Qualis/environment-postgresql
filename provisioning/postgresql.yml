@@ -19,7 +19,7 @@
       - Restart apache
 
     - name: Allow access from anywhere
-      lineinfile: dest=/etc/postgresql/9.3/main/pg_hba.conf line="host    all             all             1.0.0.1/0            md5" backup=yes
+      lineinfile: dest=/etc/postgresql/9.3/main/pg_hba.conf line="host    all    all    0.0.0.0/0    md5" backup=yes
       tags:
       - postgresql
       - development
