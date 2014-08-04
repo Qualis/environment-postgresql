@@ -12,3 +12,7 @@
         - 'deny from all'
         - 'allow from 127.0.0.0/255.0.0.0 ::1/128'
       sudo: yes
+
+    - name: Restart postgresql
+      service: name=postgresql state=restarted
+      sudo: yes

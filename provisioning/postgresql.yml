@@ -23,6 +23,8 @@
       tags:
       - postgresql
       - development
+      notify:
+      - Restart postgresql
       sudo: yes
       sudo_user: postgres
 
@@ -31,5 +33,7 @@
       tags:
       - postgresql
       - development
+      notify:
+      - Restart postgresql
       sudo: yes
       sudo_user: postgres
