@@ -1,3 +1,13 @@
+
+    - name: postgresql_db ansible module requirements
+      apt: pkg={{ item }}
+      sudo: yes
+      with_items:
+      - libpq-dev
+      - python-psycopg2
+      tags:
+      - postgresql
+
     - name: Install postgresql
       apt: pkg=postgresql
       sudo: yes
