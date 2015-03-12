@@ -1,0 +1,14 @@
+---
+- hosts: all
+
+  pre_tasks:
+    - name: Update apt cache
+      apt: update_cache=yes
+      sudo: yes
+      tags:
+      - postgresql
+
+  roles:
+     - environment-apache
+     - ../environment-postgresql
+
